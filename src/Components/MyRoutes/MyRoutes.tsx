@@ -6,6 +6,7 @@ export default function (): ReactElement {
 		<Routes>
 			<Route path="/" element={<p>Home</p>} />
 			<Route path="/search" element={<p>Search</p>} />
+			<Route path="/about" element={<p>About</p>} />
 		</Routes>
 	);
 }

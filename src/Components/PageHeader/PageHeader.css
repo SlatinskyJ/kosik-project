@@ -1,0 +1,9 @@
+.page-header {
+	width: 100%;
+	display: inline-grid;
+	grid-template-columns: 1fr 150px;
+}
+
+.MuiMenu-paper {
+	min-width: 120px;
+}
