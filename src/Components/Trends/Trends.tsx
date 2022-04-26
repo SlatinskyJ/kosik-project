@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useState } from 'react';
-import { getData } from '../../utils/middleware';
+import { getTrends } from '../../utils/middleware';
 import Gif from '../Gif/Gif';
 import { map } from 'lodash';
 import './Trends.scss';
@@ -20,7 +20,7 @@ export default function Trends(): ReactElement {
 
 	useEffect(() => {
 		setLoading(true);
-		getData().then((response: any) => {
+		getTrends().then((response: any) => {
 			setLoading(false);
 			if (response.status === 200) {
 				response.json().then((data: any) => {
