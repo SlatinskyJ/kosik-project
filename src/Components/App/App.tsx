@@ -20,7 +20,9 @@ function App(): ReactElement {
 		<div className="App">
 			<ThemeProvider theme={theme}>
 				<PageHeader />
-				<MyRoutes />
+				<div className="app-content">
+					<MyRoutes />
+				</div>
 			</ThemeProvider>
 		</div>
 	);

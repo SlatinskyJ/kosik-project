@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect, useState } from 'react';
 import { getData } from '../../utils/middleware';
 import Gif from '../Gif/Gif';
 import { map } from 'lodash';
+import './Trends.scss';
 
 interface GifData {
 	id: string;
@@ -14,6 +15,8 @@ export default function Trends(): ReactElement {
 	const [data, setData] = useState<Array<GifData> | null>(null);
 	const [loading, setLoading] = useState<boolean>(false);
 	const [error, setError] = useState<object | null>(null);
+
+	const gifSize = 'tinygif';
 
 	useEffect(() => {
 		setLoading(true);
@@ -30,13 +33,17 @@ export default function Trends(): ReactElement {
 	}, []);
 
 	return (
-		<div>
+		<div className="trends-page">
 			{loading ? (
 				<div>loading</div>
 			) : error ? (
 				<p>ERROR!</p>
 			) : (
-				map(data, (gifData: GifData) => <Gif gifData={gifData} key={gifData.id} />)
+				<div className="gif-container">
+					{map(data, (gifData: GifData) => (
+						<Gif gifData={gifData} key={gifData.id} size={gifSize} />
+					))}
+				</div>
 			)}
 		</div>
 	);
