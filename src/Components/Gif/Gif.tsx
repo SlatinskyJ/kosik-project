@@ -1,8 +1,15 @@
 import React, { ReactElement } from 'react';
 import './Gif.scss';
 
+export interface GifData {
+	id: string;
+	title: string;
+	content_description: string;
+	media: any;
+}
+
 interface GifProps {
-	gifData: any;
+	gifData: GifData;
 	size: string;
 }
 

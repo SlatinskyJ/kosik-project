@@ -2,6 +2,8 @@
 	width: 100%;
 	display: inline-grid;
 	grid-template-columns: 1fr 150px;
+	background-color: lightgray;
+	margin-bottom: 20px;
 }
 
 .MuiMenu-paper {
